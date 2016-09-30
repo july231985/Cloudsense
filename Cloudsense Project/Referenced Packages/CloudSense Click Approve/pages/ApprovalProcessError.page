@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" Extensions="CSCAP.SendFormalEmailForApprovalController" title="Send Formal Quote Email Error" tabStyle="Opportunity">
+    <apex:sectionHeader Title="Sales Order Placement"/>
+     <font color="red"><b><apex:outputLabel value="The Opportunity does not have a Primary contact. Add a primary contact first" /></b></font>
+     <br />
+     <apex:outputLink value="/{!Opportunity.Id}" id="theLink">Return to the Opportunity</apex:outputLink>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>FormalApprovalEmailLetterHead</letterhead>
+    <name>Default Acknowledgement Template - Rejection</name>
+    <style>formalLetter</style>
+    <subject>Acknowledgement of your decision on document</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your kind reply. We regret that you have rejected the document. We will look into the reasons for rejection and will get in touch for further updates.
+
+Thank you.
+
+CloudSense</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>FormalApprovalEmailLetterHead</letterhead>
+    <name>Sites Approval template - Accounts</name>
+    <style>freeForm</style>
+    <subject>Document for Approval</subject>
+    <textOnly>Dear {!Main_Contact},
+
+Thank you for enquiring about our services.
+
+The attached information contains details of our offer, including a formal quoted price, together with a copy of our standard service SLA and terms and conditions. You can electronically accept this offer and the associated contract terms by using the link at the bottom of this email.
+
+If you have any further questions about the quoted service/s please contact your Account Manager:
+
+{!Opportunity.OwnerFullName}
+{!Opportunity.OwnerEmail}
+{!Opportunity.OwnerPhone}
+
+If you would like to accept this offer, please follow the link below and we will action your request straight away. 
+
+Please Click here to approve
+Please Click here to reject
+
+Kind Regards,
+ 
+{!Opportunity.OwnerFullName}
+Account Manager
+&lt;Company Name Here&gt;</textOnly>
+    <type>html</type>
+</EmailTemplate>

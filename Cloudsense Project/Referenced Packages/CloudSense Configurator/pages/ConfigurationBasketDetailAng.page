@@ -1,0 +1,7 @@
+<apex:page standardController="cscfga__Product_Basket__c" extensions="cscfga.ProductBasketAngController">
+	<c:AsyncTaskStatus linkedObjectId="{!id}" indicatorTitle="Asynchronous tasks running over - {!basketName}"/>
+
+	<apex:pageMessages />
+	<apex:detail relatedList="true" />
+	<c:ConfigContainer containerObjectId="{!id}" additionalResources="{!additionalBasketResources}"/>
+</apex:page>

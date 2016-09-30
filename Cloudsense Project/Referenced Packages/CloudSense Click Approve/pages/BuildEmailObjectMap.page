@@ -1,0 +1,118 @@
+<apex:page id="page" standardController="CSCAP__Click_Approve_Setting__c" extensions="CSCAP.BuildEmailObjectMapController">
+	<apex:form id="form">
+		<apex:actionFunction id="jsUpdateCriteria" name="updateCriteriaSObjectFields" rerender="CriteriaDetailsSection"/>
+		<apex:actionFunction id="jsUpdateCriteriaDisplayLevel" name="updateConfigKey" action="{!updateConfigKey}" rerender="CriteriaDetailsSection">
+        	<apex:param id="jsParamDisplayLevel" name="changedLevel" value=""/>
+        </apex:actionFunction>
+		
+
+        <apex:pageBlock id="pageblock" title="Build Email Object Map">
+
+        	<apex:pageBlockButtons id="blockButtons" >
+                <apex:commandButton id="save" value="Save" action="{!save}"/>
+                <apex:commandButton id="cancel" value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection id="CriteriaDetailsSection" title="Specify Configuration Key" columns="2" showHeader="True">
+        	
+        		<apex:pageBlockSectionItem id="sectionSObject" >
+					<apex:outputLabel id="labelSObject" value="Choose SObject"/>
+					<apex:SelectList id="fieldSObject" value="{!configKey.root.optionValue}" size="1" onchange="updateConfigKey('0');">
+						<apex:selectOptions id="optionsSObject" value="{!ApprovalRelatedSObjects}"></apex:selectOptions>
+					</apex:SelectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionSObjectField" >
+                	<apex:outputLabel id="labelSObjectField" value="Choose Field " />
+                    <apex:selectList id="chooseSObjectField" value="{!configKey.fieldL1.optionValue}" size="1" onchange="updateConfigKey('1');">
+                    	<apex:selectOptions id="optionsSObjectField" value="{!CriteriaSObjectFields}"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionSObjectL1" rendered="{!configKey.fieldL1.objectType != null}" >
+					<apex:outputLabel id="labelSObjectL1" value="Related SObject"/><apex:outputLabel id="valueSObjectL1" value="{!configKey.fieldL1.objectType}"/>
+				</apex:pageBlockSectionItem>
+								
+				<apex:pageBlockSectionItem id="sectionSObjectFieldL1" rendered="{!configKey.fieldL1.objectType != null}">
+					<apex:outputLabel id="labelSObjectFieldL1" value="Choose Field" />
+				    <apex:selectList id="chooseSObjectFieldL1" value="{!configKey.fieldL2.optionValue}" size="1" onchange="updateConfigKey('2');">
+				    	<apex:selectOptions id="optionsSObjectFieldL1" value="{!CriteriaSObjectFieldsL1}"/>
+				    </apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionSObjectL2" rendered="{!configKey.fieldL2.objectType != null}" >
+					<apex:outputLabel id="labelSObjectL2" value="Related SObject"/><apex:outputLabel id="valueSObjectL2" value="{!configKey.fieldL2.objectType}"/>
+				</apex:pageBlockSectionItem>
+								
+				<apex:pageBlockSectionItem id="sectionSObjectFieldL2" rendered="{!configKey.fieldL2.objectType != null}">
+					<apex:outputLabel id="labelSObjectFieldL2" value="Choose Field" />
+				    <apex:selectList id="chooseSObjectFieldL2" value="{!configKey.fieldL3.optionValue}" size="1" onchange="updateConfigKey('3');">
+				    	<apex:selectOptions id="optionsSObjectFieldL2" value="{!CriteriaSObjectFieldsL2}"/>
+				    </apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionSObjectL3" rendered="{!configKey.fieldL3.objectType != null}" >
+					<apex:outputLabel id="labelSObjectL3" value="Related SObject"/><apex:outputLabel id="valueSObjectL3" value="{!configKey.fieldL3.objectType}"/>
+				</apex:pageBlockSectionItem>
+								
+				<apex:pageBlockSectionItem id="sectionSObjectFieldL3" rendered="{!configKey.fieldL3.objectType != null}">
+					<apex:outputLabel id="labelSObjectFieldL3" value="Choose Field" />
+				    <apex:selectList id="chooseSObjectFieldL3" value="{!configKey.fieldL4.optionValue}" size="1" onchange="updateConfigKey('4');">
+				    	<apex:selectOptions id="optionsSObjectFieldL3" value="{!CriteriaSObjectFieldsL3}"/>
+				    </apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionSObjectL4" rendered="{!configKey.fieldL4.objectType != null}" >
+					<apex:outputLabel id="labelSObjectL4" value="Related SObject"/><apex:outputLabel id="valueSObjectL4" value="{!configKey.fieldL4.objectType}"/>
+				</apex:pageBlockSectionItem>
+								
+				<apex:pageBlockSectionItem id="sectionSObjectFieldL4" rendered="{!configKey.fieldL4.objectType != null}">
+					<apex:outputLabel id="labelSObjectFieldL4" value="Choose Field" />
+				    <apex:selectList id="chooseSObjectFieldL4" value="{!configKey.fieldL5.optionValue}" size="1" onchange="updateConfigKey('5');">
+				    	<apex:selectOptions id="optionsSObjectFieldL4" value="{!CriteriaSObjectFieldsL4}"/>
+				    </apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem id="sectionConfigKey" >
+					<apex:outputLabel id="labelConfigKey" value="Config Key Name" />
+					<apex:inputText id="fieldConfigKey" value="{!configKey.name}"/>
+				</apex:pageBlockSectionItem>
+                
+                <apex:commandLink id="linkAddConfig" action="{!AddConfig}" rerender="configPanel">Add Configuration Key</apex:commandLink>
+                
+        	</apex:pageBlockSection>       	
+        	
+        	<apex:outputPanel id="configPanel" >
+            	<apex:pageMessages id="messages" />
+            
+            	<apex:pageBlockSection id="configSection" title="Configuration Keys" showHeader="True" columns="1">
+            		<apex:dataTable id="listConfig" value="{!configMap.configurationKeyList}" var="config" rowClasses="odd,even" styleClass="tableClass" columns="5" cellspacing="12">
+						<!-- 
+						<apex:column id="listConfigColumnSNo" >
+                        	{!config.SNo}
+                        </apex:column>
+                         -->
+						<apex:column id="listConfigColumnKey" >
+                        	<apex:facet name="header">Key</apex:facet>
+                        	{!config.name}
+                        </apex:column>
+                        <apex:column id="listConfigColumnValue" >
+                        	<apex:facet name="header">Value</apex:facet>
+                        	{!config.prettyPrint}
+                        </apex:column>
+						<apex:column id="listConfigQueryFragment" >
+                        	<apex:facet name="header">Query fragment</apex:facet>
+                        	{!config.queryFragment}
+                        </apex:column>
+                        <apex:column id="listConfigColumnDelete" >
+	                        <apex:commandLink id="listConfigLinkDelete" action="{!DeleteConfig}" rerender="configPanel" > Delete
+	                        	<apex:param id="listConfigParamDeleteSNo" name="configSNo" value="{!config.SNo}"/>
+	                        </apex:commandLink>
+                    	</apex:column>
+                    </apex:dataTable>
+                </apex:pageBlockSection>
+                
+            </apex:outputPanel>
+
+        </apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Button_Create_Variation_Request</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Create Variation Request</shortDescription>
+        <value>Create Variation Request</value>
+    </labels>
+    <labels>
+        <fullName>Button_Delete_Approver_Signature</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Delete Approver Signature</shortDescription>
+        <value>Delete Approver Signature</value>
+    </labels>
+    <labels>
+        <fullName>Button_Load_Approver_Signature</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Load Approver Signature</shortDescription>
+        <value>Load Approver Signature</value>
+    </labels>
+    <labels>
+        <fullName>Button_Request_PIN</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Request PIN</shortDescription>
+        <value>Request PIN</value>
+    </labels>
+    <labels>
+        <fullName>Button_Submit</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Button_Validate_PIN</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Validate PIN</shortDescription>
+        <value>Validate PIN</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Comment</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Customer Comment</shortDescription>
+        <value>Customer comments</value>
+    </labels>
+    <labels>
+        <fullName>Label_Confirmation</fullName>
+        <categories>Site Screen - Customer Approval Confirmation</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label Confirmation</shortDescription>
+        <value>Confirmation</value>
+    </labels>
+    <labels>
+        <fullName>Message_Choose_Option</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Choose Option</shortDescription>
+        <value>Please choose an option.</value>
+    </labels>
+    <labels>
+        <fullName>Message_No_Access</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message No Access</shortDescription>
+        <value>You have no access to this approval request.</value>
+    </labels>
+    <labels>
+        <fullName>Message_Pin_Send_Error</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Pin Send Error</shortDescription>
+        <value>Authorisation PIN could not be sent. Please contact your sales agent.</value>
+    </labels>
+    <labels>
+        <fullName>Message_Pin_Sent</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Pin Sent</shortDescription>
+        <value>Authorisation PIN sent.</value>
+    </labels>
+    <labels>
+        <fullName>Message_Provide_Comments</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Provide Comments</shortDescription>
+        <value>Please provide comments.</value>
+    </labels>
+    <labels>
+        <fullName>Message_Signature_File</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Signature File</shortDescription>
+        <value>Please select signature file below.</value>
+    </labels>
+    <labels>
+        <fullName>Message_Valid_Pin</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Message Valid Pin</shortDescription>
+        <value>Please enter a valid PIN. If you do not have a PIN, please click Request PIN button to get the PIN.</value>
+    </labels>
+    <labels>
+        <fullName>Section_Block_Heading_Additional_Information</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section Block Heading Additional Information</shortDescription>
+        <value>Additional Information</value>
+    </labels>
+    <labels>
+        <fullName>Section_Block_Heading_Documents_Approve</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section Block Heading - Documents Approve</shortDescription>
+        <value>Documents to Approve</value>
+    </labels>
+    <labels>
+        <fullName>Section_Block_Heading_Signature</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section Block Heading -  Signature</shortDescription>
+        <value>Approver Physical Signature</value>
+    </labels>
+    <labels>
+        <fullName>Section_Block_Heading_Variation_Request</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section Block Heading Variation Request</shortDescription>
+        <value>Variation Requests</value>
+    </labels>
+    <labels>
+        <fullName>Signatory_Name</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Signatory Name</shortDescription>
+        <value>Signatory&apos;s name</value>
+    </labels>
+    <labels>
+        <fullName>Text_Account_Manager_Will_Contact</fullName>
+        <categories>Site Screen - Customer Approval Confirmation</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Manager Will Contact</shortDescription>
+        <value>Your account manager will be in touch with you shortly.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Contact_Account_Manager</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Contact Account Manager</shortDescription>
+        <value>Please contact your account manager for further information.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Contact_Sales_Rep</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Contact Sales Rep</shortDescription>
+        <value>Please contact your sales representative for further information.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Document_Already_Approved</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Document Already Approved</shortDescription>
+        <value>This document has already been Approved.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Document_Already_Rejected</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Document Already Rejected</shortDescription>
+        <value>This document has already been Rejected.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Document_Approval_Received</fullName>
+        <categories>Site Screen - Customer Approval Confirmation</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Document Approval Received</shortDescription>
+        <value>We have received your decision to Approve the document.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Document_Rejection_Received</fullName>
+        <categories>Site Screen - Customer Approval Confirmation</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Document Rejection Received</shortDescription>
+        <value>We have received your decision to Reject the document.</value>
+    </labels>
+    <labels>
+        <fullName>Text_Enter_PIN</fullName>
+        <categories>Site Screen - Customer Approval</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Enter PIN</shortDescription>
+        <value>Please enter your PIN</value>
+    </labels>
+    <labels>
+        <fullName>Text_Sales_Rep_Will_Contact</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Sales Rep Will Contact</shortDescription>
+        <value>Your sales representative will be in touch with you shortly.</value>
+    </labels>
+</CustomLabels>

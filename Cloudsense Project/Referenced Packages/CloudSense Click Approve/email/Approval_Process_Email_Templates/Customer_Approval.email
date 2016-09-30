@@ -1,0 +1,23 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal" style="margin: 0cm 0cm 12pt; text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">Dear </span><span style="font-size: 8pt; color: black; font-family: Verdana;" lang="EN-US">{!Main_Contact}</span><span style="font-size: 7.5pt; color: black; font-family: Verdana;">,<br><br>Thank you for enquiring about 
+our services.<br><br>The attached information contains details of our 
+offer, including a formal quoted price, together with a copy of our 
+standard service SLA and terms and 
+conditions. You can electronically accept this offer and the associated 
+contract terms by using the link at the bottom of this email.<br><br>If 
+you have any further questions about the quoted service/s please contact
+ your Account Manager:</span><span style="color: black; font-family: Arial;"></span></p>
+<p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">{!Opportunity.OwnerFullName}<br>{!Opportunity.OwnerEmail}<br>{!Opportunity.OwnerPhone}</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt; text-align: justify;"><font class="Apple-style-span" face="Verdana, Helvetica, sans-serif" size="1"><font class="Apple-style-span"><span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><font><font><font class="Apple-style-span" face="Verdana, Helvetica, sans-serif" size="1"><font class="Apple-style-span">{!Opportunity.OwnerMobile}</font></font></font></font></span></font></font><br><span style="font-size: 7.5pt; color: black; font-family: Verdana;"></span><span style="color: black; font-family: Verdana;"></span></p>
+<p style="text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;"><br>If you would like to accept this 
+offer, please follow the link below and we will action your request 
+straight away. <br><br>Please <a href="mailto:{!ApproveEmail}">click
+ here to accept the offer</a><br><br>If you do not wish to accept this 
+offer at this time, please <a href="mailto:{!RejectEmail}">click
+ here to decline the offer</a><br><br>Kind Regards,</span></p>
+<p style="text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">{!Opportunity.OwnerFullName}</span></p>
+<p style="text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">Account Manager<br>&lt;Company Name Here&gt;<br></span></p>]]></td>
+</tr>
+</table>

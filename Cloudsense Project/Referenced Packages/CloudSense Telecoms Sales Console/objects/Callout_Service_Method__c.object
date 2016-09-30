@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Each Callout Service has one or more methods defined and each such combination will be represented by a record here.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Callout_Service__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Callout Service</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Certificate_Names__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique names of certificates as defined in Salesforce, comma separated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique names of certificates as defined in Salesforce, comma separated.</inlineHelpText>
+        <label>Certificate Names</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Http_Method__c</fullName>
+        <defaultValue>&apos;POST&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Http Method</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Method_Shortcut__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Method Shortcut</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Method_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of the method. Valid entries: &quot;address&quot;, &quot;availability&quot;. Other entries are ignored.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of the method. Valid entries: &quot;address&quot;, &quot;availability&quot;. Other entries are ignored.</inlineHelpText>
+        <label>Method Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Method</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Availability__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the state of specified field which will result in an &quot;OK&quot; response in offer availability check. Current format: &quot;field:value&quot; (if &quot;field&quot; has value &quot;value&quot;, offer will be marked available).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the state of specified field which will result in an &quot;OK&quot; response in offer availability check. Current format: &quot;field:value&quot; (if &quot;field&quot; has value &quot;value&quot;, offer will be marked available).</inlineHelpText>
+        <label>Offer Availability</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parameter_Mapping__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The source-target mapping of input parameters to callout parameters. For now, the structure reads as &quot;if source exists, set target to it&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The source-target mapping of input parameters to callout parameters. For now, the structure reads as &quot;if source exists, set target to it&quot;.</inlineHelpText>
+        <label>Parameter Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payload_Path__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payload Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Static_Http_Headers__c</fullName>
+        <defaultValue>&apos;Content-Type,text/xml&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>A list of headers to be set on the HTTP request. The list is a semicolon-separated list of key-value pairs, keys and values being comma separated e.g. &quot;key1,value1;key2,value2&quot;). Only set appropriate headers! For example, GET requests should not have a content type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A list of headers to be set on the HTTP request. Set the format as &quot;key1,value1;key2,value2&quot;). Only set appropriate headers! For example, GET requests should not have a content type.</inlineHelpText>
+        <label>Static Http Headers</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Callout Service Method</label>
+</CustomObject>

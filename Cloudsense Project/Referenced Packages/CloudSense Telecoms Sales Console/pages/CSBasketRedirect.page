@@ -1,0 +1,26 @@
+<apex:page standardController="cscfga__Product_Basket__c">
+	<script type="text/javascript">
+		// this is enough to close the edit configuration overlay in both lightning and classic
+		window.parent.postMessage('refreshBasketBuilderScreen', '*');
+		
+		// now check which context we are in
+		var isLightningEnv = this.isLightningEnv = function() {
+			return ((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+		};
+		
+		// and prepare the function to route us to the right navigation path
+		this.navigateTo = function(url) {
+			if (isLightningEnv()) {
+				sforce.one.navigateToURL(url);
+			} else {
+				if (window === window.top) {
+					window.location.href = url;
+				}
+			}
+		};
+		
+		this.navigateTo("/{!cscfga__Product_Basket__c.Id}/e");
+		
+	</script>
+	<p>Please wait...</p>
+</apex:page>

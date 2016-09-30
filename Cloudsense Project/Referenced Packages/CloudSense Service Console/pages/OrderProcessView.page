@@ -1,0 +1,3 @@
+<apex:page standardController="csord__Order__c" showHeader="false" sidebar="false" docType="html-5.0">
+    <c:ProcessView recordId="{!csord__Order__c.Id}" />
+</apex:page>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>addtobasket_btn_add</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket btn add - Add to Basket</shortDescription>
+        <value>Add to Basket</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_btn_cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket btn cancel - Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_dialog_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket dialog title - Add Offer to Basket</shortDescription>
+        <value>Add Offer to Basket</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_error_summaryaddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket error summaryaddress - Adress Error</shortDescription>
+        <value>Adress Error</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_error_summarycategory</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket error summarycategory - Category error please delete this item</shortDescription>
+        <value>Category error please delete this item</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_error_summaryoffer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket error summaryoffer - Offer Error please delete this item</shortDescription>
+        <value>Offer Error please delete this item</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_menu_address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket menu address - Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_menu_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket menu date - Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_menu_offer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket menu offer - Offer</shortDescription>
+        <value>Offer</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_menu_productcategory</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket menu productcategory - Product Category</shortDescription>
+        <value>Product Category</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_menu_productfilter</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket menu productfilter - Product Filter</shortDescription>
+        <value>Product Filter</value>
+    </labels>
+    <labels>
+        <fullName>addtobasket_summary_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Addtobasket summary title - Summary</shortDescription>
+        <value>Summary</value>
+    </labels>
+    <labels>
+        <fullName>availability_btn_cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Availability btn cancel - Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>availability_dialog_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Availability dialog title - Service Availability Check Results</shortDescription>
+        <value>Service Availability Check Results</value>
+    </labels>
+    <labels>
+        <fullName>basketclone_btn_currentbasket</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketclone btn currentbasket - Current basket</shortDescription>
+        <value>Current basket</value>
+    </labels>
+    <labels>
+        <fullName>basketclone_btn_newbasket</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketclone btn newbasket - New basket</shortDescription>
+        <value>New basket</value>
+    </labels>
+    <labels>
+        <fullName>basketclone_dialog_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketclone dialog title - Basket Clone</shortDescription>
+        <value>Basket Clone</value>
+    </labels>
+    <labels>
+        <fullName>basketdetails_btn_clone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketdetails btn clone - Clone Basket</shortDescription>
+        <value>Clone Basket</value>
+    </labels>
+    <labels>
+        <fullName>basketdetails_btn_save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketdetails btn save - Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>basketdetails_section_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketdetails section title - Product Basket</shortDescription>
+        <value>Product Basket</value>
+    </labels>
+    <labels>
+        <fullName>basketpage_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Basketpage title - Product basket</shortDescription>
+        <value>Product basket</value>
+    </labels>
+    <labels>
+        <fullName>listproducts_btn_add</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Listproducts btn add - Add Product</shortDescription>
+        <value>Add Product</value>
+    </labels>
+    <labels>
+        <fullName>listproducts_btn_clone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Listproducts btn clone - Copy Product</shortDescription>
+        <value>Copy Product</value>
+    </labels>
+    <labels>
+        <fullName>listproducts_btn_delete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Listproducts btn delete - Delete Product</shortDescription>
+        <value>Delete Product</value>
+    </labels>
+    <labels>
+        <fullName>listproducts_btn_updateqty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Listproducts btn updateqty - Update Quantity</shortDescription>
+        <value>Update Quantity</value>
+    </labels>
+    <labels>
+        <fullName>listproducts_section_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Listproducts section title - Manage Products in Basket</shortDescription>
+        <value>Manage Products in Basket</value>
+    </labels>
+    <labels>
+        <fullName>productquantity_dialog_btn_cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Productquantity dialog btn cancel - Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>productquantity_dialog_btn_update</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Productquantity dialog btn update - Update</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>productquantity_dialog_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Productquantity dialog title - Product quantity</shortDescription>
+        <value>Product quantity</value>
+    </labels>
+    <labels>
+        <fullName>selectproduct_btn_cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Selectproduct btn cancel - Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>selectproduct_btn_save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Selectproduct btn save - Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>selectproduct_dialog_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Selectproduct dialog title - Select Product</shortDescription>
+        <value>Select Product</value>
+    </labels>
+</CustomLabels>

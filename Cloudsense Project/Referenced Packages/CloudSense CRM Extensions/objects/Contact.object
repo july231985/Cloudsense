@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Address__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The address of this Contact. Used for the Contact&apos;s residential or default address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The address of this Contact. Used for the Contact&apos;s residential or default address.</inlineHelpText>
+        <label>Address</label>
+        <referenceTo>Address__c</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Birth_Certificate_Authority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing authority for this Contact&apos;s birth certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing authority for this Contact&apos;s birth certificate.</inlineHelpText>
+        <label>Birth Certificate Authority</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Birth_Certificate_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The country of issue for this Contact&apos;s birth certificate. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The country of issue for this Contact&apos;s birth certificate. Two-letter country code.</inlineHelpText>
+        <label>Birth Certificate Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Birth_Certificate_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of issue for this Contact&apos;s birth certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of issue for this Contact&apos;s birth certificate.</inlineHelpText>
+        <label>Birth Certificate Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Birth_Certificate_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID number for this Contact&apos;s birth Certificate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID number for this Contact&apos;s birth Certificate.</inlineHelpText>
+        <label>Birth Certificate Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concession_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reference number of the document under which this Contact is eligible for a concession.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The reference number of the document under which this Contact is eligible for a concession.</inlineHelpText>
+        <label>Concession Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concession_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of concession this Contact is eligible for.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of concession this Contact is eligible for.</inlineHelpText>
+        <label>Concession Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pensioner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Concession__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, this Contact is entitled to a concession (e.g. old age etc.).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Contact is entitled to a concession (e.g. old age etc.).</inlineHelpText>
+        <label>Concession</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Current_Employer_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of this Contact&apos;s current Employer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of this Contact&apos;s current Employer.</inlineHelpText>
+        <label>Current Employer Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Employer_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The phone number for this Contact&apos;s current employer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The phone number for this Contact&apos;s current employer.</inlineHelpText>
+        <label>Current Employer Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Drivers_License_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Country of issue for this Contact&apos;s driver&apos;s license. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Country of issue for this Contact&apos;s driver&apos;s license. Two-letter country code.</inlineHelpText>
+        <label>Driver&apos;s License Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drivers_License_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Expiry date of this Contact&apos;s driver&apos;s license.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiry date of this Contact&apos;s driver&apos;s license.</inlineHelpText>
+        <label>Driver&apos;s License Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Drivers_License_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The driver number on this Contact&apos;s driving license.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The driver number on this Contact&apos;s driving license.</inlineHelpText>
+        <label>Driver&apos;s License Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ID for this Contact from an external system.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>ID for this Contact from an external system.</inlineHelpText>
+        <label>External ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>National_Health_Card_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiry date for this Contact&apos;s national health insurance card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expiry date for this Contact&apos;s national health insurance card.</inlineHelpText>
+        <label>National Health Card Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>National_Health_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s ID number in the national health insurance program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s ID number in the national health insurance program.</inlineHelpText>
+        <label>National Health Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Occupation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s occupation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s occupation.</inlineHelpText>
+        <label>Occupation</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paperless_Billing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, this Contact prefers paperless billing (bill by email).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Contact prefers paperless billing (bill by email).</inlineHelpText>
+        <label>Paperless Billing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pasport_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Expiry date of this Contact&apos;s passport.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiry date of this Contact&apos;s passport.</inlineHelpText>
+        <label>Pasport Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Passport_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The country of issue for this Contact&apos;s passport. Two-letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The country of issue for this Contact&apos;s passport. Two-letter country code.</inlineHelpText>
+        <label>Passport Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Passport_Issue_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of issue of this Contact&apos;s passport.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of issue of this Contact&apos;s passport.</inlineHelpText>
+        <label>Passport Issue Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Passport_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The passport number for this Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The passport number for this Contact.</inlineHelpText>
+        <label>Passport Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Previous_Address__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The previous address of this Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The previous address of this Contact.</inlineHelpText>
+        <label>Previous Address</label>
+        <referenceTo>Address__c</referenceTo>
+        <relationshipLabel>Contacts (Previous Address)</relationshipLabel>
+        <relationshipName>Contacts_Previous_Address</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Residential_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The residential status of this Contact (owner, tenant etc).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The residential status of this Contact (owner, tenant etc).</inlineHelpText>
+        <label>Residential Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tenant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Living with parents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Social_Security_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s ID number in the social security program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s ID number in the social security program.</inlineHelpText>
+        <label>Social Security Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Student_Card_Authority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing authority of this Contact&apos;s student card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing authority of this Contact&apos;s student card.</inlineHelpText>
+        <label>Student Card Authority</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Student_Card_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The issuing country of this Contact&apos;s student card. Two letter country code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The issuing country of this Contact&apos;s student card. Two letter country code.</inlineHelpText>
+        <label>Student Card Country</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Student_Card_Expiry_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiry date for this Contact&apos;s student card.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expiry date for this Contact&apos;s student card.</inlineHelpText>
+        <label>Student Card Expiry Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Student_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This Contact&apos;s student card ID number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Contact&apos;s student card ID number.</inlineHelpText>
+        <label>Student Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_at_Current_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact has lived at their current address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact has lived at their current address.</inlineHelpText>
+        <label>Time at Current Address</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Less than 6 months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6-12 months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-2 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-5 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5+ years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Time_at_Current_Employment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact has been in their current employment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact has been in their current employment.</inlineHelpText>
+        <label>Time at Current Employment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Less than 6 months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6-12 months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5+ years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Time_at_Previous_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The length of time this Contact lived at their previous address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The length of time this Contact lived at their previous address.</inlineHelpText>
+        <label>Time at Previous Address</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Less than 1 year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-2 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-3 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3-4 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4-5 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5+ years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Time_at_Previous_Employment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time this Contact spent at their previous employment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time this Contact spent at their previous employment.</inlineHelpText>
+        <label>Time at Previous Employment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Less than 1 year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-2 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-3 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3-4 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4-5 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5+ years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

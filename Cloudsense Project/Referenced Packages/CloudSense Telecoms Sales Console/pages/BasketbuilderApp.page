@@ -1,0 +1,320 @@
+<apex:page standardStylesheets="true" standardController="cscfga__Product_Basket__c" extensions="csbb.BasketBuilderAppController">
+<apex:stylesheet value="{!URLFOR($Resource.csbb__basketbuilder, '/styles/vendor.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.csbb__basketbuilder, '/styles/main.css')}"/>
+
+<script type="text/javascript" src="{!URLFOR($Resource.basketbuilder, '/scripts/oldieshim.js')}"></script>
+<script type="text/javascript" src="{!URLFOR($Resource.basketbuilder, '/scripts/vendor.js')}"></script>
+<script type="text/javascript" src="{!URLFOR($Resource.basketbuilder, '/scripts/scripts.js')}"></script>
+
+<style type="text/less">
+@main-color: {!mainColour};
+@gray-light: #ffa429;
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes newRowAnimation {
+  0% {
+    background: fade(@main-color,40%); }
+  100% {
+    background: @gray-light; } }
+/* Standard syntax */
+@keyframes newRowAnimation {
+  0% {
+    background: fade(@main-color,40%); }
+  100% {
+    background: @gray-light; } }
+/* Buttons CSS */
+.btn:hover, .file-list .btn:hover, body .btn:hover {
+  color: @main-color; }
+.btn.btn-checkbox.checked:before, .file-list .btn.btn-checkbox.checked:before, body .btn.btn-checkbox.checked:before {
+  background-color: @main-color;
+  border: 1px solid @main-color; }
+.btn.btn-checkbox.checked:hover:before, .file-list .btn.btn-checkbox.checked:hover:before, body .btn.btn-checkbox.checked:hover:before {
+  background-color: lighten(@main-color,10);
+  border-color: lighten(@main-color,10); }
+.btn.btn-address:before, .file-list .btn.btn-address:before, body .btn.btn-address:before {
+  background: @main-color; }
+.btn.btn-address:hover:before, .file-list .btn.btn-address:hover:before, body .btn.btn-address:hover:before {
+  background-color: lighten(@main-color,10); }
+.btn.btn-select-product, .file-list .btn.btn-select-product, body .btn.btn-select-product {
+  background-color: @main-color; }
+  .btn.btn-select-product:hover, .file-list .btn.btn-select-product:hover, body .btn.btn-select-product:hover {
+    background-color: lighten(@main-color,10); }
+.btn.btn-status.ok:before, .file-list .btn.btn-status.ok:before, body .btn.btn-status.ok:before {
+  color: @main-color; }
+.btn.btn-status.recurring:before, .file-list .btn.btn-status.recurring:before, body .btn.btn-status.recurring:before {
+  color: @main-color; }
+
+/* Buttons on expanded rows */
+.expanded .btn.btn-expand:before {
+  color: @main-color; }
+.expanded .btn.btn-expand:hover:before {
+  color: lighten(@main-color,10); }
+
+/* Main buttons */
+header button, .details-row button {
+  background: @main-color; }
+
+/* data table - line items CSS */
+.data-table .table-header.expanded, .data-table .table-row.expanded {
+  border: 2px solid @main-color; }
+.data-table .table-row .table-cell a:hover {
+  color: @main-color; }
+.modal .data-table .table-row .ng-isolate-scope.selected .table-cell {
+  background-color: @main-color; }
+.data-table .table-row .new-row .table-cell {
+  -webkit-animation-name: newRowAnimation;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s;
+  /* Chrome, Safari, Opera */
+  animation-name: newRowAnimation;
+  animation-duration: 4s;
+  border-top: 1px solid fade(@main-color,40%);
+  border-bottom: 1px solid fade(@main-color,40%); }
+
+/* CSS override for datepicker to match CS design */
+[date-picker] table thead tr:first-child th {
+  color: @main-color; }
+[date-picker] table tbody tr td span.now {
+  background-color: @main-color; }
+  [date-picker] table tbody tr td span.now:hover {
+    background-color: darken(@main-color,10) !important; }
+[date-picker] table tbody tr td span.active {
+  background-color: @main-color !important; }
+  [date-picker] table tbody tr td span.active:hover {
+    background-color: darken(@main-color,10) !important; }
+
+.dialog h4 {
+  color: @main-color; }
+
+/* CSS override for Select2 to match CS design */
+.select2-container.select2-dropdown-open .select2-choice, .select2-container.select2-dropdown-open .select2-choices {
+  border-color: @main-color; }
+.select2-container.select2-dropdown-open.select2-drop-above .select2-choice, .select2-container.select2-dropdown-open.select2-drop-above .select2-choices {
+  border-color: @main-color; }
+
+.select2-container-multi.select2-container-active .select2-choices {
+  border: 1px solid @main-color; }
+
+.select2-drop {
+  border-color: @main-color; }
+  .select2-drop .select2-results .select2-highlighted {
+    background-color: @main-color; }
+  .select2-drop.select2-drop-active.select2-drop-above {
+    border-color: @main-color; }
+
+/* modal dialog CSS */
+.modal-content .modal-header .btn, .modal-content .modal-footer .btn {
+  background-color: @main-color; }
+  .modal-content .modal-header .btn:hover, .modal-content .modal-footer .btn:hover {
+    background-color: lighten(@main-color,10); }
+.modal-content .modal-navigation .navigation ul li.selected {
+  background: @main-color; }
+.modal-content .modal-body .main-content ul li.selected {
+  background: @main-color; }
+  .modal-content .modal-body .main-content ul li.selected:after {
+    color: @main-color; }
+.modal-content .modal-body .main-content ul.list-checkbox li.selected:before {
+  background-color: @main-color;
+  border: 1px solid @main-color; }
+.modal-content .modal-body .main-content ul.list-checkbox li.selected:hover:before {
+  background-color: lighten(@main-color,10);
+  border-color: lighten(@main-color,10); }
+.modal-content .modal-body .main-content .tabs-content {
+  border: 2px solid @main-color; }
+  .modal-content .modal-body .main-content .tabs-content .btn {
+    background: @main-color; }
+    .modal-content .modal-body .main-content .tabs-content .btn:hover, .modal-content .modal-body .main-content .tabs-content .btn:active, .modal-content .modal-body .main-content .tabs-content .btn:focus {
+      background-color: lighten(@main-color,10); }
+.modal-content .modal-body .main-content .tabs-title.selected .btn {
+  background-color: @main-color; }
+.modal-content .modal-body .main-content .list-scrollable .list-table .list-row.selected .list-cell, .modal-content .modal-body .main-content .list-scrollable .list-table .list-row.selected .table-cell {
+  background-color: @main-color; }
+.modal-content .modal-body .main-content .icon-calendar {
+  color: @main-color; }
+.modal-content .modal-body .main-content div.jstree ul li i.jstree-ocl:before {
+  color: @main-color; }
+.modal-content .modal-body .main-content div.jstree ul li i.glyphicon {
+  color: @main-color; }
+.modal-content .modal-body .main-content div.jstree ul a.jstree-clicked i.jstree-checkbox:before {
+  background-color: @main-color;
+  border: 1px solid @main-color; }
+.modal-content .modal-body .main-content div.jstree ul a.jstree-clicked i.jstree-checkbox:hover:before {
+  background-color: lighten(@main-color,10);
+  border-color: lighten(@main-color,10); }
+.modal-content .modal-body .basket-sticky .basket-container .btn.icon-bin {
+  color: @main-color; }
+  .modal-content .modal-body .basket-sticky .basket-container .btn.icon-bin:hover {
+    color: lighten(@main-color,10); }
+/* Tabs-layout */
+.tab-list ul li a.tab-active {
+  border-bottom-color: @main-color;
+}
+    <apex:repeat var="customButtonResource" value="{!customButtonResources}">
+    .{!customButtonResource.cssClass} {
+        background: @main-color url('{!customButtonResource.path}') no-repeat center center / 100% 100%;
+    }
+    </apex:repeat>
+
+</style>
+
+<script type="text/javascript" src="{!URLFOR($Resource.less)}"></script>
+
+
+
+<style>
+
+    
+    
+    .btn.btn-pending-select-product, .file-list .btn.btn-pending-select-product, body .btn.btn-pending-select-product {
+    {!IF(pendingIconResource != 'null','background-image: url('+pendingIconResource+');','')} }
+  .dialog .progress-icon {
+  {!IF(pendingIconResource != 'null','background-image: url('+pendingIconResource+');','')} }
+.modal-content .modal-body .main-content .list-scrollable.pending {
+    {!IF(pendingIconResource != 'null','background-image: url('+pendingIconResource+');','')} }
+.CScontainer span.pending, .ng-scope span.pending {
+   {!IF(pendingIconResource != 'null','background-image: url('+pendingIconResource+');','')} }
+</style>
+
+<script type="text/javascript">
+var pathUrlForApp = '{!URLFOR($Resource.basketbuilder)}';
+
+// now check which context we are in
+var globalIsLightningEnv = function() {
+  return ((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+};
+
+// and prepare the function to route us to the right navigation path
+var globalNavigateTo = function(url) {
+  if (globalIsLightningEnv()) {
+    sforce.one.navigateToURL(url);
+  } else {
+    //if (window === window.top) {
+      window.location.href = url;
+    //}
+  }
+};
+
+//this.navigateTo("/{!cscfga__Product_Basket__c.Id}/e");
+
+pathUrlForApp = pathUrlForApp.split('?')[0] + '/';
+
+angular.module('basketbuilderApp')
+  .constant('ResourcePathConst', {
+    path: pathUrlForApp,
+
+  })
+  .constant('BasketBuilderIdConstant', "{!cscfga__Product_Basket__c.Id}")
+  .constant('AppSettingsConstant', {
+    'addProduct': '{!addToBasketJourneyType}'
+  })
+  .constant('GlobalNavigateToUrlConstant', globalNavigateTo)
+  .constant('VFRemotingConstant', {
+    'VRMInvokeAction': Visualforce.remoting.Manager.invokeAction,
+    'getProductCategory':'{!$RemoteAction.BasketBuilderAppController.getProductCategoryList}',
+    'getManageProductList':'{!$RemoteAction.BasketBuilderAppController.getManageProductList}',
+    'getOffersByCategory':'{!$RemoteAction.BasketBuilderAppController.getOffersByCategory}',
+    'getSelect2Options':'{!$RemoteAction.BasketBuilderAppController.getSelect2Options}',
+    'getSelect2OptionsSObject':'{!$RemoteAction.BasketBuilderAppController.getSelect2OptionsSObject}',
+    'getProductBasketDetails':'{!$RemoteAction.BasketBuilderAppController.getProductBasketDetails}',
+    'getAvailabilityDetails':'{!$RemoteAction.BasketBuilderAppController.getAvailabilityDetails}',
+    'getAvailability':'{!$RemoteAction.BasketBuilderAppController.getAvailability}',
+    'getAvailableOffers':'{!$RemoteAction.BasketBuilderAppController.getAvailableOffers}',
+    'searchAddress':'{!$RemoteAction.BasketBuilderAppController.searchAddress}',
+    'getAddressFilter':'{!$RemoteAction.BasketBuilderAppController.getAddressFilter}',
+    'getProductsByCategory':'{!$RemoteAction.BasketBuilderAppController.getProductsByCategory}',
+    'getManageProductDetails':'{!$RemoteAction.BasketBuilderAppController.getManageProductDetails}',
+    'saveProductBasketDetails': '{!$RemoteAction.BasketBuilderAppController.saveProductBasketDetails}',
+    'deleteProducts': '{!$RemoteAction.BasketBuilderAppController.deleteFromBasket}',
+    'addToBasket': '{!$RemoteAction.BasketBuilderAppController.addToBasket}',
+    'selectProduct': '{!$RemoteAction.BasketBuilderAppController.selectProduct}',
+    'cloneConfig': '{!$RemoteAction.BasketBuilderAppController.cloneConfig}',
+    'synchOpportunity': '{!$RemoteAction.BasketBuilderAppController.synchOpportunity}',
+    'advancedCloneConfig': '{!$RemoteAction.BasketBuilderAppController.advancedCloneConfig}',
+    'cbAction': '{!$RemoteAction.BasketBuilderAppController.cbAction}',
+    'getMultipleAvailabilityDetails': '{!$RemoteAction.BasketBuilderAppController.getMultipleAvailabilityDetails}',
+    'cloneBasketStatus': '{!$RemoteAction.BasketBuilderAppController.cloneBasketStatus}',
+    'cloneBasket': '{!$RemoteAction.BasketBuilderAppController.cloneBasket}',
+    'getHierarchicalCategory': '{!$RemoteAction.BasketBuilderAppController.getHierarchicalCategory}',
+    'getEligibility': '{!$RemoteAction.BasketBuilderAppController.getEligibility}',
+    'getProductsByCategoryOrOffers': '{!$RemoteAction.BasketBuilderAppController.getProductsByCategoryOrOffers}',
+    'updatePcrQuantity': '{!$RemoteAction.BasketBuilderAppController.updatePcrQuantity}',
+    'getRelatedObjects' : '{!$RemoteAction.BasketBuilderAppController.getRelatedObjects}'
+  })
+  .constant('LabelsConstant', {
+    'BASKETPAGE_TITLE':'{!JSENCODE($Label.basketpage_title)}',
+    'BASKETDETAILS_SECTION_TITLE':'{!JSENCODE($Label.basketdetails_section_title)}',
+    'BASKETDETAILS_BTN_CLONE':'{!JSENCODE($Label.basketdetails_btn_clone)}',
+    'BASKETDETAILS_BTN_SAVE':'{!JSENCODE($Label.basketdetails_btn_save)}',
+    'LISTPRODUCTS_SECTION_TITLE':'{!JSENCODE($Label.listproducts_section_title)}',
+    'LISTPRODUCTS_BTN_ADD':'{!JSENCODE($Label.listproducts_btn_add)}',
+    'LISTPRODUCTS_BTN_CLONE':'{!JSENCODE($Label.listproducts_btn_clone)}',
+    'LISTPRODUCTS_BTN_DELETE':'{!JSENCODE($Label.listproducts_btn_delete)}',
+    'ADDTOBASKET_DIALOG_TITLE':'{!JSENCODE($Label.addtobasket_dialog_title)}',
+    'ADDTOBASKET_BTN_ADD':'{!JSENCODE($Label.addtobasket_btn_add)}',
+    'ADDTOBASKET_BTN_CANCEL':'{!JSENCODE($Label.addtobasket_btn_cancel)}',
+    'ADDTOBASKET_ERROR_SUMMARYCATEGORY':'{!JSENCODE($Label.addtobasket_error_summarycategory)}',
+    'ADDTOBASKET_ERROR_SUMMARYOFFER':'{!JSENCODE($Label.addtobasket_error_summaryoffer)}',
+    'ADDTOBASKET_ERROR_SUMMARYADDRESS':'{!JSENCODE($Label.addtobasket_error_summaryaddress)}',
+    'ADDTOBASKET_MENU_PRODUCTCATEGORY':'{!JSENCODE($Label.addtobasket_menu_productcategory)}',
+    'ADDTOBASKET_MENU_PRODUCTFILTER':'{!JSENCODE($Label.addtobasket_menu_productfilter)}',
+    'ADDTOBASKET_MENU_ADDRESS':'{!JSENCODE($Label.addtobasket_menu_address)}',
+    'ADDTOBASKET_MENU_OFFER':'{!JSENCODE($Label.addtobasket_menu_offer)}',
+    'ADDTOBASKET_MENU_DATE':'{!JSENCODE($Label.addtobasket_menu_date)}',
+    'ADDTOBASKET_SUMMARY_TITLE':'{!JSENCODE($Label.addtobasket_summary_title)}',
+    'SELECTPRODUCT_DIALOG_TITLE':'{!JSENCODE($Label.selectproduct_dialog_title)}',
+    'SELECTPRODUCT_BTN_SAVE':'{!JSENCODE($Label.selectproduct_btn_save)}',
+    'SELECTPRODUCT_BTN_CANCEL':'{!JSENCODE($Label.selectproduct_btn_cancel)}',
+    'AVAILABILITY_DIALOG_TITLE':'{!JSENCODE($Label.availability_dialog_title)}',
+    'AVAILABILITY_BTN_CANCEL':'{!JSENCODE($Label.availability_btn_cancel)}',
+    'BASKETCLONE_DIALOG_TITLE':'{!JSENCODE($Label.basketclone_dialog_title)}',
+    'BASKETCLONE_BTN_CURRENTBASKET':'{!JSENCODE($Label.basketclone_btn_currentbasket)}',
+    'BASKETCLONE_BTN_NEWBASKET':'{!JSENCODE($Label.basketclone_btn_newbasket)}',
+    'LISTPRODUCTS_BTN_UPDATEQTY':'{!JSENCODE($Label.listproducts_btn_updateqty)}',
+    'PRODUCTQUANTITY_DIALOG_TITLE':'{!JSENCODE($Label.productquantity_dialog_title)}',
+    'PRODUCTQUANTITY_DIALOG_BTN_CANCEL':'{!JSENCODE($Label.productquantity_dialog_btn_cancel)}',
+    'PRODUCTQUANTITY_DIALOG_BTN_UPDATE':'{!JSENCODE($Label.productquantity_dialog_btn_update)}'
+  })
+  ;
+
+  function postMessage() {
+    //Hack to support close of dialog.
+    angular.element('#EditProductDialog').scope().closeEditProduct();
+  }
+
+</script>
+
+<div ng-app="basketbuilderApp" class="CScontainer">
+  <toaster-container></toaster-container>
+  
+  <div ng-controller="BasketCloneController" ng-init="init({isCloning:{!isCloning}})"></div>
+  <div ng-controller="HomeController as vm">
+
+    <!-- view main-header -->
+    <div class="container" >
+        <div class="main-header page-block">
+            <h3 ng-bind="vm.LabelsConstant.BASKETPAGE_TITLE"></h3>
+        </div>
+    </div>
+    <!-- view tabs -->
+    <div class="container" ng-controller="HomeController as vm">
+      <div class="tab-list page-block">
+          <ul>
+              <li ng-repeat="tab in vm.tabs.tabs">
+                  <a ng-click="vm.setActiveTab(tab)" class="tab-label" ng-class="{'tab-active': vm.isActiveTab(tab)}" ng-bind="tab">
+                      
+                  </a>
+              </li>
+              <!-- <li><a class="tab-label">Related</a></li> -->
+          </ul>     
+      </div>       
+      <div class="tab-wrapper tab-active" ng-if="vm.isActiveTab('Details')">
+          <div class="container" ui-view="productBasket" ></div>
+          <div class="container" ui-view="manageProducts" ></div>
+      </div>
+      <div class="tab-wrapper tab-active" ng-if="vm.isActiveTab('Related')">
+          <div class="container" ui-view="basketRelated" ></div>
+      </div>
+    </div>
+  </div>
+</div>
+</apex:page>

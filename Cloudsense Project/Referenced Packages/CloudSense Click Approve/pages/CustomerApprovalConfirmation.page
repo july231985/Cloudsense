@@ -1,0 +1,43 @@
+<apex:page language="{!pageLanguage}" StandardController="CSCAP__Customer_Approval__c" extensions="CSCAP.CustomerApprovalController" showHeader="false" sideBar="false">
+	<html>
+	    <head>
+	        <title>{!$Label.cscap__Label_Confirmation}</title>
+	        <style type="text/css">
+	            body {
+	                font: 8pt/1.3 sans-serif;
+	                margin-top: 1.0cm;
+	                margin-left: 1.5cm;
+	                margin-right: 1.5cm;
+	                margin-bottom: 1.0cm;
+	            }
+	        </style>
+	    </head>
+	    <body>
+		<apex:form >
+	        <apex:pageBlock tabStyle="Click_Approve_Setting__c" Title="{!$Label.cscap__Label_Confirmation}">
+	            <apex:pageMessages />
+	            <apex:outputPanel >
+		            <apex:pageBlockSection columns="1" showHeader="false">
+		            	<apex:outputPanel >
+		            		<p>{!if($CurrentPage.parameters.decision == 'Approve',$Label.cscap__Text_Document_Approval_Received,$Label.cscap__Text_Document_Rejection_Received)}</p>
+		            		<!--  <p>We have received your decision to <b>{!$CurrentPage.parameters.decision}</b> this record.</p>  -->
+		            		<apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Account_Manager__c}">
+								<p>{!$Label.cscap__Text_Account_Manager_Will_Contact}</p>
+								<!--  
+								<p>Your account manager <a href="mailto:{!AccountManagerEmail}"><b>{!AccountManagerName}</b></a> will be in touch with you shortly.</p>
+								 -->
+							</apex:outputPanel>
+		            		<apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Opportunity_Owner__c}">
+								<p>{!$Label.cscap__Text_Sales_Rep_Will_Contact}</p>
+								<!--  
+								<p>Your sales representative <a href="mailto:{!OpportunityOwnerEmail}"><b>{!OpportunityOwnerName}</b></a> will be in touch with you shortly.</p>
+								-->
+							</apex:outputPanel>
+		            	</apex:outputPanel>
+		            </apex:pageBlockSection>
+	            </apex:outputPanel>
+			</apex:pageBlock>
+		</apex:form>
+		</body>
+	</html>
+</apex:page>

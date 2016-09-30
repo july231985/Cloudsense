@@ -1,0 +1,39 @@
+<apex:page StandardController="CSCAP__Variation_Request__c" extensions="CSCAP.VariationRequestController" cache="false" showHeader="false" sideBar="false">
+    <html>
+        <head>
+            <title>Variation Request</title>
+            <style type="text/css">
+                body {
+                    font: 8pt/1.3 sans-serif;
+                    margin-top: 1.0cm;
+                    margin-left: 1.5cm;
+                    margin-right: 1.5cm;
+                    margin-bottom: 1.0cm;
+                }
+            </style>
+        </head>
+        <body>
+        <apex:form >
+            <apex:pageBlock tabStyle="Click_Approve_Setting__c" Title="Variation Request">
+                <apex:pageMessages />
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+                <apex:outputPanel >
+                    <apex:pageBlockSection title="Variation Details" columns="1" showHeader="false">
+                        <apex:outputPanel >
+                            <apex:inputField value="{!CSCAP__Variation_Request__c.CSCAP__Section_Clause__c}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel >
+                            <p><b>Variation Request Details:</b></p> 
+                            <apex:inputTextarea id="variationDetails" cols="100" rows="15" value="{!CSCAP__Variation_Request__c.CSCAP__Variation_Request_Details__c}"/>
+                            <p/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:pageBlock>
+        </apex:form>
+        </body>
+    </html>
+</apex:page>

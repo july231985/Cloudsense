@@ -1,0 +1,230 @@
+<apex:page language="{!pageLanguage}" StandardController="CSCAP__Customer_Approval__c"  cache="false" extensions="CSCAP.CustomerApprovalController" showHeader="false" sideBar="false">
+    <html>
+        <head>
+            <title>{!SitesApprovalTitle}</title>
+            <style type="text/css">
+                body { 
+                    font: 8pt/1.3 sans-serif;
+                    margin-top: 1.0cm;
+                    margin-left: 1.5cm;
+                    margin-right: 1.5cm;
+                    margin-bottom: 1.0cm;
+                }
+            	{! pageStyle}
+            </style>
+            <script language="JavaScript">
+                var commentId = '';
+                function setCommentId(commentboxId){
+                    commentId = commentboxId;
+                }
+                function displayCommentBox(approveChk, declineChk, chkBoxClicked, display){
+                    
+                    var commentBlockDivObject = document.getElementById("commentblock");
+                    var madatoryIndicatorDivObject = document.getElementById("madatoryIndicatorDiv");
+                    
+                    var approveChkObj = document.getElementById(approveChk);
+                    var declineChkObj = document.getElementById(declineChk);
+                    
+                    if(chkBoxClicked == declineChkObj){
+                        declineChkObj.checked = true;
+                        approveChkObj.checked = false;
+                    } else if(chkBoxClicked == approveChkObj){
+                        declineChkObj.checked = false;
+                        approveChkObj.checked = true;
+                    }
+                    if(({!displayCommentOnApprove} && approveChkObj.checked) || ({!displayCommentOnDecline} && declineChkObj.checked) ){
+                        if(commentBlockDivObject !== null ){
+                            commentBlockDivObject.style.display = "block";
+                        }
+                    }else{
+                        if(commentBlockDivObject !== null){
+                            commentBlockDivObject.style.display = "none";
+                        }
+                    }
+                    if( 
+                        ({!displayCommentOnApprove} && approveChkObj.checked && !{!isCommentMandatoryOnApprove}) || 
+                        ({!displayCommentOnDecline} && declineChkObj.checked && !{!isCommentMandatoryOnDecline}) 
+                    ){
+                        madatoryIndicatorDiv.className = "";
+                    }
+                    if( 
+                        ({!displayCommentOnApprove} && approveChkObj.checked && {!isCommentMandatoryOnApprove}) || 
+                        ({!displayCommentOnDecline} && declineChkObj.checked && {!isCommentMandatoryOnDecline}) 
+                    ){
+                        madatoryIndicatorDiv.className = "requiredBlock";
+                    }
+                }
+                
+            </script>
+        </head> 
+        <body>
+        <apex:form >
+            <apex:pageBlock tabStyle="Click_Approve_Setting__c" Title="{!SitesApprovalTitle}" rendered="{!IF(key!='',true,false)}">
+                <apex:pageMessages />
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="{!$Label.cscap__Button_Submit}" action="{!submit}" rendered="{!IF(AllowApproval && (isPinValid || NOT(ValidatePIN)),true,false)}"/>
+                    <apex:commandButton value="{!$Label.cscap__Button_Create_Variation_Request}" action="{!createVariationRequest}" rendered="{!IF(AllowApproval && isPinValid && $Setup.ClickApprove_Constants__c.Allow_Variation_Requests__c,true,false)}"/>
+                    <apex:commandButton value="{!$Label.cscap__Button_Validate_PIN}" action="{!validatePIN}" rendered="{!IF(ValidatePIN && NOT(isPinValid), true, false)}"/>
+                </apex:pageBlockButtons>
+                <apex:outputPanel rendered="{!IF(ValidatePIN && NOT(isPinValid), true, false)}">
+                    <apex:pageBlockSection title="Enter PIN" columns="1" showHeader="false">
+                        <apex:outputPanel >
+                            <b>{!$Label.cscap__Text_Enter_PIN} : </b>
+                            <apex:inputText value="{!enteredPIN}"/> &nbsp;&nbsp;<apex:commandButton value="{!$Label.cscap__Button_Request_PIN}" action="{!SendPIN}" rendered="{!ValidatePIN}"/> 
+                            <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Account_Manager__c}">
+                            	<p>{!$Label.cscap__Text_Contact_Account_Manager}</p>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Opportunity_Owner__c}">
+                            	<p>{!$Label.cscap__Text_Contact_Sales_Rep}</p>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!IF(isPinValid || NOT(ValidatePIN), true, false)}">
+                    <apex:pageBlockSection title="Approval Details" columns="1" showHeader="false" rendered="{!AllowApproval}">
+                        <apex:outputPanel >
+                            <apex:outputText value="{!SitesApprovalHeader}" escape="false"/>
+                            <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Account_Manager__c}">
+                                <p>{!$Label.cscap__Text_Contact_Account_Manager}</p>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Opportunity_Owner__c}">
+                                <p>{!$Label.cscap__Text_Contact_Sales_Rep}</p>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                        <apex:outputPanel >
+                            
+                            <div id="radiocontrol">
+                                 <apex:inputCheckbox id="approveChk" value="{!approveChkValue}" title="approve" onchange="javascript:displayCommentBox('{!$Component.approveChk}','{!$Component.declineChk}',this, false)" />{!approveChkLabel} <br />
+                                 <apex:inputCheckbox id="declineChk" value="{!declineChkValue}" title="decline" onchange="javascript:displayCommentBox('{!$Component.approveChk}','{!$Component.declineChk}',this,true)" />{!declineChkLabel}<br />
+                            </div>
+                            
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!renderCommentField}">
+                            <div id="commentblock" style="display: block">
+                                <p><b>{!$Label.Customer_Comment}:</b></p> 
+                                <div class = "requiredInput">
+                                    <div id="madatoryIndicatorDiv" class = "{!commentBoxCssClass}"></div>
+                                    <apex:inputTextarea id="customerComment" cols="100" rows="15" value="{!customerApproval.CSCAP__Customer_comment__c}"/>
+                                    <script>
+                                        setCommentId('{!$Component.customerComment}');
+                                    </script>
+                                </div>
+                            </div>
+                            
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="{!$Label.cscap__Section_Block_Heading_Signature}" columns="2" showHeader="True" rendered="{!AllowApproval && $Setup.ClickApprove_Constants__c.Collect_Physical_Signature__c}">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                                <apex:inputfile value="{!approverSignature.body}" filename="{!approverSignature.Name}" />
+                                <apex:commandbutton value="{!$Label.cscap__Button_Load_Approver_Signature}" action="{!loadApproverSignature}"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                                <b>{!$Label.cscap__Signatory_Name}: </b>
+                                <apex:inputText value="{!customerApproval.CSCAP__Approver_Name__c}" id="approverName" />
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!IF(signatureImageId != '',true,false)}">
+                            <apex:outputPanel >
+                                <apex:image id="theImage" value="{!URLFOR($Action.Attachment.Download, signatureImageId)}"/>
+                                <apex:commandbutton value="{!$Label.cscap__Button_Delete_Approver_Signature}" action="{!deleteApproverSignature}"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="{!$Label.cscap__Section_Block_Heading_Documents_Approve}" columns="1" showHeader="True" rendered="{!AllowApproval}">
+                        <apex:pageBlockSectionItem >
+                            <apex:pageBlockTable value="{!customerApproval.Attachments}" var="file">
+                                <apex:column headerValue="Action">
+                                    <a href="{!URLFOR($Action.Attachment.Download, file.Id)}"><b>Download</b></a>
+                                </apex:column>
+                                <apex:column value="{!file.Name}"/>
+                                <apex:column value="{!file.contentType}"/>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSectionItem> 
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="{!$Label.cscap__Section_Block_Heading_Additional_Information}" columns="1" showHeader="True" rendered="{! renderAdditionalInformation && AllowApproval }" >
+                        <apex:pageBlockSectionItem >
+                            <apex:outputPanel >
+                                
+                                <table>
+                                    <apex:outputPanel rendered="{!renderVATField}" >
+                                    <tr>
+                                        <td><b>VAT</b></td><td><apex:inputText id="VAT" value="{!VAT}"  /></td>
+                                    </tr>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!renderPOField}">
+                                    <tr>
+                                        <td><b>PO</b></td><td><apex:inputText id="PO" value="{!PO}"  /></td>
+                                    </tr>
+                                    </apex:outputPanel>
+                                </table>
+                            </apex:outputPanel>
+                            
+                        </apex:pageBlockSectionItem> 
+                    </apex:pageBlockSection> 
+                    <apex:pageBlockSection title="{!$Label.cscap__Section_Block_Heading_Variation_Request}" columns="1" showHeader="True" rendered="{!AllowApproval && $Setup.ClickApprove_Constants__c.Allow_Variation_Requests__c}">
+                        <apex:pageBlockSectionItem >
+                            <apex:pageBlockTable value="{!customerApproval.Variation_Requests__r}" var="vr">
+                                <apex:column headerValue="Action">
+                                    <b>
+                                        <apex:commandLink action="{!editVariationRequest}" value="Edit" id="editCommandLink">
+                                            <apex:param name="requestVariationId" assignTo="{!requestVariationId}" value="{!vr.Id}" />
+                                        </apex:commandLink>
+                                    </b> | 
+                                    <b>
+                                        <apex:commandLink action="{!deleteVariationRequest}" value="Del" id="deleteCommandLink">
+                                            <apex:param name="requestVariationId" assignTo="{!requestVariationId}" value="{!vr.Id}" />
+                                        </apex:commandLink>
+                                    </b>
+                                </apex:column>
+                                <apex:column value="{!vr.CSCAP__Section_Clause__c}"/>
+                                <apex:column value="{!vr.CSCAP__Variation_Request_Details__c}"/>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSectionItem> 
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Approval Details" columns="1" showHeader="false" rendered="{!NOT(AllowApproval)}">
+                        <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Account_Manager__c}">
+                        	<p>{!if(ApprovedOrRejected == 'Approved', $Label.cscap__Text_Document_Already_Approved, $Label.cscap__Text_Document_Already_Rejected )} {!$Label.cscap__Text_Contact_Account_Manager}</p>
+                            <!-- <p>This record has already been {!ApprovedOrRejected}. Please contact your account manager <a href="mailto:{!AccountManagerEmail}"><b>{!AccountManagerName}</b></a> for further information.</p> -->
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!$Setup.ClickApprove_Constants__c.Display_Opportunity_Owner__c}">
+                        	<p>{!if(ApprovedOrRejected == 'Approved', $Label.cscap__Text_Document_Already_Approved, $Label.cscap__Text_Document_Already_Rejected )} {!$Label.cscap__Text_Contact_Sales_Rep}</p>
+                            <!-- <p>This record has already been {!ApprovedOrRejected}. Please contact your sales representative <a href="mailto:{!OpportunityOwnerEmail}"><b>{!OpportunityOwnerName}</b></a> for further information.</p> -->
+                        </apex:outputPanel>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </apex:pageBlock>
+            <apex:pageBlock tabStyle="Click_Approve_Setting__c" Title="{!SitesApprovalTitle}" rendered="{!IF(key=='',true,false)}">
+                <apex:pageMessages />
+            </apex:pageBlock>
+        </apex:form>
+        <script>
+        // self executing function here
+        
+        (function() {
+                var commentBlockDivObject = document.getElementById("commentblock");
+                
+                if(commentBlockDivObject !== null){ 
+                    commentBlockDivObject.style.display = "none";
+                    
+                if(({!displayCommentOnApprove} && {!approveChkValue}) || ({!displayCommentOnDecline} && {!declineChkValue}) ){
+                    if(commentBlockDivObject !== null ){
+                        commentBlockDivObject.style.display = "block";
+                      }
+                  }else{
+                    if(commentBlockDivObject !== null){
+                        commentBlockDivObject.style.display = "none";
+                      }
+                  }
+            
+            }
+            
+        })(); 
+        </script>
+        </body>
+    </html>
+</apex:page>

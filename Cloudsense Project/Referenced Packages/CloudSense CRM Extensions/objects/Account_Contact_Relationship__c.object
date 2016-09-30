@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Automatically generated. Describes the role of the Account in this relationship (taken from the &apos;A&apos; side of the linked Relation record).</description>
+        <externalId>false</externalId>
+        <formula>Relation__r.A_Side__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automatically generated. Describes the role of the Account in this relationship (taken from the &apos;A&apos; side of the linked Relation record).</inlineHelpText>
+        <label>Account Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Account in this relationship.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account in this relationship.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account-Contact Relationships</relationshipLabel>
+        <relationshipName>Account_Contact_Relationships</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether or not this relationship should be considered to be in effect.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether or not this relationship should be considered to be in effect.</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An automatically generated field providing the Contact&apos;s name and a link to its detail page. For convenience of display in related lists.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Contact__c, Contact__r.FirstName + &quot; &quot; + Contact__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>An automatically generated field providing the Contact&apos;s name and a link to its detail page. For convenience of display in related lists.</inlineHelpText>
+        <label>Contact Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Automatically generated. Describes the role of the Contact in this relationship (taken from the &apos;B&apos; side of the linked Relation record).</description>
+        <externalId>false</externalId>
+        <formula>Relation__r.B_Side__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automatically generated. Describes the role of the Contact in this relationship (taken from the &apos;B&apos; side of the linked Relation record).</inlineHelpText>
+        <label>Contact Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Contact in this relationship.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Contact in this relationship.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Account-Contact Relationships</relationshipLabel>
+        <relationshipName>Account_Contact_Relationships</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date this relationship ceased to be in effect (if known).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date this relationship ceased to be in effect (if known).</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_Primary_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, indicates that this Contact is the Primary Contact for this Account. Only one Primary Contact can be specified per Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, indicates that this Contact is the Primary Contact for this Account. Only one Primary Contact can be specified per Account.</inlineHelpText>
+        <label>Primary Contact</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Level_of_Confidence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The level of confidence that this relationship is accurate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The level of confidence that this relationship is accurate.</inlineHelpText>
+        <label>Level of Confidence</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Relation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The relation between the Account and Contact this relationship represents.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The relation between the Account and Contact this relationship represents.</inlineHelpText>
+        <label>Relation</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Relation__c.Type__c</field>
+                <operation>equals</operation>
+                <value>Account-Contact</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Relation__c</referenceTo>
+        <relationshipLabel>Account-Contact Relationships</relationshipLabel>
+        <relationshipName>Account_Contact_Relationships</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date this relationship came into effect (if known).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date this relationship came into effect (if known).</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Account-Contact Relationship</label>
+    <nameField>
+        <displayFormat>ACR-{00000000}</displayFormat>
+        <label>#</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account-Contact Relationships</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

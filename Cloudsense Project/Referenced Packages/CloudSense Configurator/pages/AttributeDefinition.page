@@ -1,0 +1,95 @@
+<apex:page standardcontroller="cscfga__Attribute_Definition__c" extensions="cscfga.AttributeDefinitionExtensionController">
+<apex:messages />
+	<apex:sectionheader title="{!$ObjectType.cscfga__Attribute_Definition__c.label} Detail" subtitle="{!cscfga__Attribute_Definition__c.name}"/>
+	<chatter:feedwithfollowers entityId="{!cscfga__Attribute_Definition__c.id}"/>
+	<apex:form >
+		<apex:pageblock mode="maindetail" title="{!$ObjectType.cscfga__Attribute_Definition__c.label} Detail">
+			<apex:pageblockbuttons >
+				<apex:commandbutton value="Edit" action="{!edit}"/>
+				<apex:commandbutton value="Delete" action="{!deleteWithRedirect}"/>
+			</apex:pageblockbuttons>
+
+			<apex:outputpanel >
+				<apex:pageblocksection title="Information" showheader="false" collapsible="false" columns="2">
+					<apex:outputfield id="product_definition__c" value="{!cscfga__Attribute_Definition__c.cscfga__Product_Definition__c}"/>
+					<apex:pageblocksectionitem />
+					<apex:outputfield id="name" value="{!cscfga__Attribute_Definition__c.name}"/>
+					<apex:outputfield id="output_mapping__c" value="{!cscfga__Attribute_Definition__c.cscfga__Output_Mapping__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="pkg_slot_min__c" value="{!cscfga__Attribute_Definition__c.cscfga__Min__c}" rendered="{!isPackage}"></apex:outputfield>
+					<apex:outputfield id="label__c" value="{!cscfga__Attribute_Definition__c.cscfga__Label__c}"/>
+					<apex:outputfield id="configuration_output_mapping__c" value="{!cscfga__Attribute_Definition__c.cscfga__configuration_output_mapping__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="pkg_slot_max__c" value="{!cscfga__Attribute_Definition__c.cscfga__Max__c}" rendered="{!isPackage}"></apex:outputfield>
+					<apex:outputfield id="type__c" value="{!cscfga__Attribute_Definition__c.cscfga__Type__c}"/>
+					<apex:outputfield id="cascade_value__c" value="{!cscfga__Attribute_Definition__c.cscfga__Cascade_value__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputLabel value=" " rendered="{!isPackage}"></apex:outputLabel>
+					<apex:outputfield id="data_type__c" value="{!cscfga__Attribute_Definition__c.cscfga__Data_Type__c}"></apex:outputfield>
+					<apex:outputfield id="lookup_config__c" value="{!cscfga__Attribute_Definition__c.cscfga__Lookup_Config__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="default_value__c" value="{!cscfga__Attribute_Definition__c.cscfga__Default_Value__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="lookup_query__c" value="{!cscfga__Attribute_Definition__c.cscfga__Lookup_Query__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="required__c" value="{!cscfga__Attribute_Definition__c.cscfga__Required__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="select_list_lookup__c" value="{!cscfga__Attribute_Definition__c.cscfga__Select_List_Lookup__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="hidden__c" value="{!cscfga__Attribute_Definition__c.cscfga__Hidden__c}"  rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="minimum_input_length__c" value="{!cscfga__Attribute_Definition__c.cscfga__Minimum_Input_Length__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="enable_null_option__c" value="{!cscfga__Attribute_Definition__c.cscfga__Enable_null_option__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="column_size_csv__c" value="{!cscfga__Attribute_Definition__c.cscfga__Column_Size_CSV__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="enable_multiple_selection__c" value="{!cscfga__Attribute_Definition__c.cscfga__Enable_Multiple_Selection__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="is_line_item__c" value="{!cscfga__Attribute_Definition__c.cscfga__Is_Line_Item__c}"  rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="enable_predictive_search__c" value="{!cscfga__Attribute_Definition__c.cscfga__Enable_Predictive_Search__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="recurring__c" value="{!cscfga__Attribute_Definition__c.cscfga__Recurring__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="high_volume__c" value="{!cscfga__Attribute_Definition__c.cscfga__high_volume__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="line_item_description__c" value="{!cscfga__Attribute_Definition__c.cscfga__Line_Item_Description__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="show_in_summary__c" value="{!cscfga__Attribute_Definition__c.cscfga__show_in_summary__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="line_item_sequence__c" value="{!cscfga__Attribute_Definition__c.cscfga__Line_Item_Sequence__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="pattern__c" value="{!cscfga__Attribute_Definition__c.cscfga__Pattern__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="base_price__c" value="{!cscfga__Attribute_Definition__c.cscfga__Base_Price__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="custom_validation_error_message__c" value="{!cscfga__Attribute_Definition__c.cscfga__Custom_Validation_Error_Message__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="is_rate_line_item__c" value="{!cscfga__Attribute_Definition__c.cscfga__Is_Rate_Line_Item__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="min__c" value="{!cscfga__Attribute_Definition__c.cscfga__Min__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="reference_value__c" value="{!cscfga__Attribute_Definition__c.cscfga__Reference_Value__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="max__c" value="{!cscfga__Attribute_Definition__c.cscfga__Max__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="is_significant__c" value="{!cscfga__Attribute_Definition__c.cscfga__is_significant__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="scale__c" value="{!cscfga__Attribute_Definition__c.cscfga__Scale__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="attribute_help_text__c" value="{!cscfga__Attribute_Definition__c.cscfga__attribute_help_text__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:outputfield id="calculation_sequence__c" value="{!cscfga__Attribute_Definition__c.cscfga__Calculation_Sequence__c}" rendered="{!!isPackage}"></apex:outputfield>
+					<apex:pageblocksectionitem />
+				</apex:pageblocksection>
+				<apex:pageblocksection title="Display Information" showheader="true" collapsible="true" columns="2" rendered="{!!isPackage}">
+					<apex:outputfield id="configuration_screen__c" value="{!cscfga__Attribute_Definition__c.cscfga__Configuration_Screen__c}"/>
+					<apex:outputfield id="screen_section__c" value="{!cscfga__Attribute_Definition__c.cscfga__Screen_Section__c}"/>
+					<apex:outputfield id="row__c" value="{!cscfga__Attribute_Definition__c.cscfga__Row__c}"/>
+					<apex:outputfield id="column__c" value="{!cscfga__Attribute_Definition__c.cscfga__Column__c}"/>
+					<apex:outputfield id="column_span__c" value="{!cscfga__Attribute_Definition__c.cscfga__Column_Span__c}"/>
+					<apex:outputfield id="column_style__c" value="{!cscfga__Attribute_Definition__c.cscfga__Column_Style__c}"/>
+					<apex:outputfield id="text_input_lines__c" value="{!cscfga__Attribute_Definition__c.cscfga__Text_input_lines__c}"/>
+					<apex:outputfield id="list_columns__c" value="{!cscfga__Attribute_Definition__c.cscfga__List_Columns__c}"/>
+				</apex:pageblocksection>
+				<apex:pageblocksection title="System Information" showheader="false" collapsible="false" columns="2">
+					<apex:pageblocksectionitem >
+						<apex:outputlabel value="Created By"/>
+						<apex:outputpanel >
+							<apex:outputfield id="createdById" value="{!cscfga__Attribute_Definition__c.createdById}"/>&nbsp;,
+							<apex:outputfield id="createdDate" value="{!cscfga__Attribute_Definition__c.createdDate}"/>
+						</apex:outputpanel>
+					</apex:pageblocksectionitem>
+					<apex:pageblocksectionitem >
+						<apex:outputlabel value="Last Modified By"/>
+						<apex:outputpanel >
+							<apex:outputfield id="lastModifiedById" value="{!cscfga__Attribute_Definition__c.lastModifiedById}"/>&nbsp;,
+							<apex:outputfield id="lastModifiedDate" value="{!cscfga__Attribute_Definition__c.lastModifiedDate}"/>
+						</apex:outputpanel>
+					</apex:pageblocksectionitem>
+				</apex:pageblocksection>
+			</apex:outputpanel>
+		</apex:pageblock>
+	</apex:form>
+
+	<apex:outputpanel >
+		<apex:relatedlist list="attribute_screen_section_associations__r" title="Screens Displaying This Attribute" rendered="{!!isPackage}"></apex:relatedlist>
+		<apex:relatedlist list="select_options__r" title="Select Options" rendered="{!!isPackage}"></apex:relatedlist>
+		<apex:relatedlist list="available_product_options__r" title="Available Product Options"/>
+		<apex:relatedlist list="predicates__r" title="Predicates Evaluating This Attribute" rendered="{!!isPackage}"></apex:relatedlist>
+		<apex:relatedlist list="actions__r" title="Actions Targeting This Attribute" rendered="{!!isPackage}"></apex:relatedlist>
+		<apex:relatedlist list="predicateattribute__r" title="Predicates (Attribute Definition)" rendered="{!!isPackage}"></apex:relatedlist>
+		<apex:relatedlist list="attribute_field_definitions__r" title="Attribute Field Definitions" rendered="{!!isPackage}"></apex:relatedlist>
+	</apex:outputpanel>
+</apex:page>

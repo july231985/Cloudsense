@@ -1,0 +1,103 @@
+<apex:page controller="cssvc1.ServiceUIController" showHeader="true" sidebar="true">
+
+	<apex:stylesheet value="{!URLFOR($Resource.cssvc1__slds, '/assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+	<apex:outputPanel layout="none" rendered="false">
+		<link rel="stylesheet" href="resource/slds/assets/styles/salesforce-lightning-design-system-vf.css" />
+	</apex:outputPanel>
+
+	<div class="slds" ng-app="ControlPanelApp">
+		<div ng-controller="ControlPanelCtrl" class="slds-page-header" role="banner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<div class="slds-grid">
+				<div class="slds-col slds-has-flexi-truncate">
+					<p class="slds-text-heading--label">Service Console</p>
+					<div class="slds-grid">
+						<div class="slds-grid slds-type-focus slds-no-space">
+							<h1 class="slds-text-heading--medium slds-truncate" title="{{listConfig.header.title}}">{{listConfig.header.title}}</h1>
+						</div>
+					</div>
+				</div>
+				<div class="slds-col slds-no-flex slds-align-bottom">
+					<div class="slds-grid">
+						<div class="slds-button-group slds-text-body--small slds-m-top--x-small"><img ng-src="{{'/images/powered-by-cs.png' | resource:'service_console'}}" alt="Powered by CloudSense" style="width: 140px; height: 20px" /></div>
+					</div>
+				</div>
+			</div>
+			<p class="slds-text-body--small slds-m-top--x-small">&nbsp;</p>
+		</div>
+
+		<!-- This must come before control-panel.js is loaded in <c:ControlPanel /> -->
+		<script type="text/javascript">
+			var CSSVC_context = {
+				user: {
+					userId: '{!$User.id}',
+					themeDisplayed: '{!$User.UITheme}'
+				}
+			};
+
+			var CSSVC_resourceURLs = {
+				order_navigator: '{!$Resource.order_navigator}',
+				process_widget: '{!$Resource.process_widget}',
+				service_console: '{!$Resource.service_console}'
+			}
+		</script>
+		<c:ControlPanel ></c:ControlPanel>
+
+		<apex:outputPanel layout="none" rendered="false">
+			&nbsp;
+			<script type="text/javascript">
+				// Stubs for non-VF env development
+				CSSVC_context = {
+					user: {
+						id: '005000000000000',
+						themeDisplayed: 'Theme3'
+					}
+				};
+
+				CSSVC_resourceURLs = {
+					order_navigator: 'resource/order_navigator',
+					process_widget: 'resource/process_widget',
+					service_console: 'resource/service_console'
+				}
+			</script>
+			<ng-include src="'service-control-panel-component.html'"></ng-include>
+		</apex:outputPanel>
+
+	</div>
+
+	<apex:includeScript value="{!$Resource.cssvc1__jquery}" />
+	<apex:includeScript value="{!$Resource.cssvc1__angular}" />
+	<apex:includeScript value="{!URLFOR($Resource.cssvc1__angular_i18n, 'angular-locale_' + userAngularLocale + '.js')}" />
+	<apex:includeScript value="{!$Resource.cssvc1__underscore}" />
+
+	<apex:outputPanel layout="none" rendered="false">
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-i18n/angular-locale_en-gb.js"></script>
+		<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+		<script type="text/javascript" src="test/control-panel-stubs.js"></script>
+		
+		<script type="text/javascript">
+			angular
+				.module('RemoteSvc', ['UtilSvc'])
+				.service('RemoteSvc', ['UtilSvc', function(UtilSvc) {
+					return {
+						getItems: UtilSvc.wrapVFRemote('{!$RemoteAction.ServiceUIController.getControlPanelItems}'),
+						getConfig: UtilSvc.wrapVFRemote('{!$RemoteAction.ServiceUIController.getConfig}'),
+						processWidgetResourceUrl: '{!$Resource.process_widget}'
+					};
+				}]);
+		</script>
+
+		<script type="text/javascript" src="resource/service_console/js/control-panel.js"></script>
+	</apex:outputPanel>
+
+	<script type="text/javascript">
+		if (angular.element("script[src*='control-panel.js']").size() == 0) {
+			angular
+				.element("<"+"script type='text/javascript' src='{!URLFOR($Resource.service_console, '/js/control-panel.js')}'><" + "/script>")
+				.appendTo(angular.element('body'));
+		}		
+	</script>
+
+</apex:page>

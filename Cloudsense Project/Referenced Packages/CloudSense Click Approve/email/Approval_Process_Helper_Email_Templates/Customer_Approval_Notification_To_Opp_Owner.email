@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="text-align: justify;"><span style="font-size: 7.5pt; color: black; font-family: Verdana;">Dear </span><span style="font-size: 7.5pt; color: black; font-family: Verdana;">Dear </span><span style="font-size: 7.5pt; color: black; font-family: Verdana;">{!Opportunity.OwnerFullName}</span><span style="font-size: 7.5pt; color: black; font-family: Verdana;">,<br></span><span style="font-size: 8pt; color: black; font-family: Verdana;" lang="EN-US"></span></p><p style="text-align: justify;"><span style="font-size: 8pt; color: black; font-family: Verdana;" lang="EN-US"><br></span></p><p style="text-align: justify;"><span style="font-size: 8pt; color: black; font-family: Verdana;" lang="EN-US">{!Contact.Name} has approved the proposal associated with Opportunity "" for the following organisation ""</span><span style="font-size: 7.5pt; color: black; font-family: Verdana;">.<br><br>Please login to Salesforce and review it. </span></p>]]></td>
+</tr>
+</table>

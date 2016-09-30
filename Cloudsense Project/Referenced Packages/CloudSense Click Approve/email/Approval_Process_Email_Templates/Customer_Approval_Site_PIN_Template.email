@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<div><span style="font-size: 12pt;">Dear {!contact_fname}</span><span style="background-color: rgb(255, 255, 255);">,</span></div><div><span style="background-color: rgb(255, 255, 255);"><br></span></div>Thank you for requesting authorisation PIN for site login.&nbsp;<div><br></div><div>Your PIN is:&nbsp;{!ApprovalPin}</div><div><br></div><div><div>If you have any further questions please contact your Account Manager:</div><div><br></div><div>{!requester_name}</div><div>{!requester_email}</div><div>{!requester_phone}</div></div><div><br></div><div>Thanks.</div><div><br></div><div><div>Kind Regards,</div><div>&nbsp;</div><div>{!requester_name}</div><div>Account Manager</div></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

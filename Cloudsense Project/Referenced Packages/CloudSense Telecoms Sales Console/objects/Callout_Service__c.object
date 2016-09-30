@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Each Callout Service is represented by a record in this setting.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Point__c</fullName>
+        <deprecated>false</deprecated>
+        <description>end point address for messaging. Will differ across environments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>end point address for messaging. Will differ across environments</inlineHelpText>
+        <label>End Point</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Service account password to use in messages to this service. If password is confidential then consider using a separate encrypting mechanism</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Service account password to use in messages to this service. If password is confidential then consider using a separate encrypting mechanism</inlineHelpText>
+        <label>Password</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timeout__c</fullName>
+        <deprecated>false</deprecated>
+        <description>service timeout in seconds</description>
+        <externalId>false</externalId>
+        <inlineHelpText>service timeout in seconds</inlineHelpText>
+        <label>Timeout</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Service account name to use in messages to this service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Service account name to use in messages to this service</inlineHelpText>
+        <label>Username</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Callout Service</label>
+</CustomObject>

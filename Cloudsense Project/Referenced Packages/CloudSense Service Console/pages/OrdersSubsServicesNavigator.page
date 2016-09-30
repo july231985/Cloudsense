@@ -1,0 +1,8 @@
+<apex:page standardController="csord__Order__c" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false">
+<html>
+	<head></head>
+	<body class="cssvc">
+	    <c:OrderSubsServicesNavigator recordId="{!csord__Order__c.Id}" />
+	</body>
+</html>
+</apex:page>

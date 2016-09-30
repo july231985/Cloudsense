@@ -1,0 +1,8 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+<html>
+	<head></head>
+	<body class="cssvc">
+	    <c:OrderSubsServicesNavigator recordId="{!Account.Id}" />
+	</body>
+</html>
+</apex:page>

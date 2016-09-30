@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Disable_Triggers__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, triggers in the CSCRM package will be disabled. Useful when doing mass data manipulation or specific operations where trigger behaviour is not desired. It is important to take care that data consistency is maintained when using this option.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, triggers in the CSCRM package will be disabled. Useful when doing mass data manipulation or specific operations where trigger behaviour is not desired. It is important to take care that data consistency is maintained when using this option.</inlineHelpText>
+        <label>Disable Triggers</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CloudSense CRM Extensions Settings</label>
+</CustomObject>
